@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imágenes Adicionales</title>
+    <style>
+
+
+        #imagesContainer {
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+            gap: 10px;
+        }
+
+        #imagesContainer img {
+            width: 100%;               /* Hace que las imágenes se ajusten al ancho del contenedor */
+            height: 200px;             /* Altura fija para que todas las imágenes tengan el mismo tamaño */
+                    
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="imagesContainer"></div>
+
+<script>
+    function getObjectID() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('id');
+    }
+
+    function loadAdditionalImages() {
+        const objectID = getObjectID();
+        fetch(`https://collectionapi.metmuseum.org/public/collection/v1/objects/${objectID}`)
+            .then(response => {
+                if (!response.ok) throw new Error('Error al obtener el objeto');
+                return response.json();
+            })
+            .then(data => {
+                console.log(data); // Verifica la estructura de datos
+                const additionalImages = data.additionalImages || [];
+                if (additionalImages.length > 0) {
+                    const imagesHtml = additionalImages.map(img => `<img src="${img}" alt="Imagen adicional">`).join('');
+                    document.getElementById('imagesContainer').innerHTML = imagesHtml;
+                } else {
+                    document.getElementById('imagesContainer').innerHTML = '<p>No hay imágenes adicionales disponibles.</p>';
+                }
+            })
+            .catch(error => {
+                console.error('Error al cargar imágenes adicionales:', error);
+                document.getElementById('imagesContainer').innerHTML = '<p>Error al cargar imágenes adicionales.</p>';
+            });
+    }
+
+    window.onload = loadAdditionalImages;
+</script>
+
+</body>
+</html>
+

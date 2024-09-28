@@ -1,0 +1,160 @@
+/* Reset de estilo para todos los elementos */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Estilo para el cuerpo */
+body {
+    background-image: url(museo.jpg); /* Cambia esta URL por la imagen de fondo que desees */
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-position: center;
+    color: #333;
+}
+
+/* Estilo para el contenedor principal */
+.container {
+    max-width: 1200px; /* Aumenta el tamaño máximo de la caja contenedora */
+    margin: 100px auto; /* Centra la caja contenedora y da un margen superior */
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con opacidad */
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el encabezado principal */
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #007BFF; /* Color del título */
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo para el buscador */
+#buscador {
+    display: flex;
+    justify-content: center; /* Centra el buscador */
+    flex-wrap: wrap;
+    gap: 10px; /* Espacio entre elementos del buscador */
+}
+
+#buscador form {
+    display: flex;
+    flex-direction: column; /* Coloca los elementos en columnas */
+    width: 100%; /* Ancho completo del buscador */
+}
+
+/* Estilo para los campos de entrada */
+.input {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 0; /* Espacio entre elementos */
+}
+
+label {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Estilo para selects e inputs */
+select, input {
+    padding: 10px;
+    border: 1px solid #007BFF; /* Borde azul */
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+select:focus, input:focus {
+    border-color: #0056b3; /* Color más oscuro al enfocar */
+    outline: none;
+}
+
+/* Estilo para botones */
+button {
+    padding: 10px 15px;
+    background-color: #007BFF; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Espacio encima del botón */
+}
+
+button:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilo para la grilla de objetos */
+#grilla {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Define cuatro columnas fijas */
+    gap: 20px; /* Espacio entre tarjetas */
+    margin-top: 20px; /* Margen superior de la grilla */
+}
+
+/* Estilo para cada objeto */
+.objeto {
+    background-color: #f9f9f9; /* Fondo de las tarjetas */
+    border: 1px solid #ddd; /* Borde de las tarjetas */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.objeto:hover {
+    transform: scale(1.02); /* Efecto al pasar el mouse */
+}
+
+/* Estilo para las imágenes de los objetos */
+.objeto img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Estilo para los títulos de los objetos */
+.titulo {
+    font-size: 1.2em;
+    margin: 10px;
+}
+
+/* Estilo para la cultura y dinastía de los objetos */
+.cultura, .dinastia {
+    font-size: 0.9em;
+    margin: 5px 10px;
+    color: #666;
+}
+
+/* Estilo para la paginación */
+#paginacion {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#paginacion button {
+    margin: 0 5px;
+}
+
+/* Estilo para el enlace "Ver más imágenes" */
+.ver-mas {
+    display: inline-block;
+    padding: 10px 15px;          /* Espaciado interno */
+    background-color: #3498db;   /* Color de fondo */
+    color: white;                /* Color del texto */
+    border: none;                /* Sin borde */
+    border-radius: 5px;         /* Bordes redondeados */
+    text-decoration: none;       /* Sin subrayado */
+    font-weight: bold;           /* Texto en negrita */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+/* Cambia el color de fondo al pasar el ratón */
+.ver-mas:hover {
+    background-color: #2980b9;  /* Color de fondo al pasar el ratón */
+}

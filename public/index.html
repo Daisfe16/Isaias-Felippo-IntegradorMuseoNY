@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo de NY</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenidos al Museo de Arte Metropolitano</h1> <!-- Título agregado -->
+        <div id="buscador">
+            <form action="">
+                <div class="input">
+                    <label for="departamento">Departamento</label>
+                    <select name="departamento" id="departamento">
+                    </select>
+                </div>
+              
+                <div class="input">
+                    <label for="keyword">Palabra Clave</label>
+                    <input type="text" id="keyword" name="keyword">
+                </div>
+                <div class="input">
+                    <label for="localizacion">Localización</label>
+                    <select name="localizacion" id="localizacion">
+                        <option value="0">Seleccione una localización</option>
+                        <option value="1">China</option>
+                        <option value="2">Francia</option>
+                        <option value="3">México</option>
+                        <option value="4">Europa</option>
+                        <option value="5">Egipto</option>
+                    </select>
+                </div>
+                <button type="submit" id="buscar">Buscar</button>
+            </form>
+        </div>
+        <div id="grilla">
+            
+        </div>
+        <div id="paginacion">
+            
+        </div>
+    </div>
+</body>
+</html>
