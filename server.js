@@ -8,6 +8,10 @@ const port = 3000;
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+app.get("/", (req, res)=> {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+})
+
 // Cambiar a POST para la ruta de traducción
 app.post("/translate", (req, res) => {
     const { text, source, target } = req.body;
@@ -20,6 +24,7 @@ app.post("/translate", (req, res) => {
       }
     });
   });
+
 // Middleware de 404
 app.use((req, res, next) => { 
     res.status(404).send('404 not found');
