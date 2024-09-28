@@ -3,6 +3,7 @@ const translate = require('node-google-translate-skidz');
 const bodyParser = require('body-parser'); // Importar body-parser
 const app = express();
 const port = 3000;
+const path = require("path");
 
 // Middleware para parsear JSON
 app.use(bodyParser.json());
